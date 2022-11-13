@@ -1,0 +1,97 @@
+<MyLabel@Label>:
+    font_name: "astron boy.ttf"
+    color: 1, 1, 0, 1
+    font_size: 35
+    
+
+<MyFloatLayout>:
+    button2: button2
+    canvas.before:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: "iss.jpg"
+    WrappedLabel:
+        size_hint: (1, 1/5)
+        pos_hint: {"center_y": .9}
+        text: "Current Coordinates of the International Space Station"
+        halign: "center"
+        font_size: 45
+        font_name: "astron boy.ttf"
+        color: .22, .44, .66, 1
+    BoxLayout:
+        size_hint: (1, 1/5)
+        pos_hint: {"center_y": .8}
+        orientation: "horizontal"
+        MyLabel:
+            text: "Latitude"
+            font_size: 70
+        MyLabel:
+            id: lat_label
+            text: ""
+            font_name: "Roboto-Black.ttf"
+            color: 1, 1, 1, 1
+    BoxLayout:
+        size_hint: (1, 1/5)
+        pos_hint: {"center_y": .6}
+        orientation: "horizontal"
+        MyLabel:
+            text: "Longitude"
+            font_size: 70
+        MyLabel:
+            id: long_label
+            text: ""
+            font_name: "Roboto-Black.ttf"
+            color: 1, 1, 1, 1
+    BoxLayout:
+        size_hint: (1, 1/5)
+        pos_hint: {"center_y": .4}
+        orientation: "horizontal"
+        MyLabel:
+            text: "Altitude"
+            font_size: 70
+        MyLabel:
+            id: alt_label
+            text: ""
+            font_name: "Roboto-Black.ttf" 
+            color: 1, 1, 1, 1 
+    BoxLayout:
+        size_hint: (1, 1/5)
+        pos_hint: {"center_y": .2}
+        orientation: "horizontal"
+        MyLabel:
+            text: "Address"
+            font_size: 70
+        WrappedLabel:
+            id: address_label
+            text: ""
+            halign: "center"
+            font_name: "Roboto-Black.ttf"
+            font_size: 35
+            color: 1, 1, 1, 1
+    BoxLayout:
+        size_hint: (1, 1/5)
+        Button:
+            id: button1
+            size_hint: (.5, .5)
+            text: "Load location" 
+            font_size: 45
+            font_name: "astron boy.ttf" 
+            background_color: .34, .55, .77, 1 
+            on_press: root.on_pre_enter()
+            on_press: root.button2.text = "Where is that?"
+            on_press: root.button2.disabled = False
+
+        Button:
+            id: button2
+            size_hint: (.5, .5)
+            text: ""
+            disabled: True
+            font_size: 45
+            font_name: "astron boy.ttf"
+            background_color: .34, .55, .77, 1 
+            on_press: root.get_location()
+                
+                
+                 
+                       
