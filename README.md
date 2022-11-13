@@ -9,4 +9,6 @@ user to Google maps to pinpoint the exact
 location of those coordinates in a graphic 
 manner. I built the APK for this app using
 Google Colab and installed a working version of
-it on my phone.
+it on my phone. The buildozer.spec file is set
+for 32 bit  only, but I can be easily changed
+to include 64 bit architecture as well.
